@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+
+.name-box {
+  background: linear-gradient(270deg, #f3f6de, #FBFFDC, #f5facd);
+  background-size: 200% 200%;
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  -o-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  padding: 0 0.8rem;
+}
+
+.darklogo {
+  background: linear-gradient(270deg, #2d1b28, #331D2C, #311a2a);
+}
+
+h1 {
+  font-family: "Fasthand", cursive;
+  font-size: 2.5rem;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ----------------------------------------------------------------- */
+
+/* links */
+
+.header-nav li {
+  display: inline-block;
+  width: 6rem;
+}
+
+li {
+  position: relative;
+  margin: 0 auto;
+  line-height: 3em;
+  text-align: center;
+}
+li:before,
+li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-radius: 0.3rem;
+  background: #3a4945;
+  position: absolute;
+  -webkit-transform: scale3d(0, 1, 1);
+  transform: scale3d(0, 1, 1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+li:before {
+  right: 0;
+  top: 0;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+li:after {
+  left: 0;
+  bottom: 0;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+li:hover:before,
+li:hover:after {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+li a {
+  transition: 0.4s;
+  letter-spacing: 0.1em;
+}
+li:hover a {
+  letter-spacing: -0.05em;
+  color: lightgreen;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  font-size: 2rem;
+}
+
+nav ul li {
+  margin: 0rem 1.5rem;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #381313;
+}
+
+/* hamburger menu */
+
+.burger-menu {
+  height: 3rem;
+  width: 4rem;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.burger-bar {
+  width: 4em;
+  height: 0.5em;
+  background-color: #0aff9d;
+  border-radius: 0.5em;
+}
+
+
+.menu {
+  backdrop-filter: blur(70px);
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 5.5rem;
+  z-index: 1;
+  animation: menuAnimation 0.2s ease-in-out;
+  border-bottom: 1px solid black;
+  opacity: 0;
+}
+
+
+.hidden {
+  display: none;
+}
+
+@keyframes menuAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+.burger-bar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.75em, 1.25em);
+  transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(2) {
+  transform: scale(0.1);
+  transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(3) {
+  transform: rotate(135deg) translate(-0.5em, 1em);
+  transition: ease-out 0.5s;
+}
+
+/* unclicked */
+.burger-bar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+@media (max-width: 600px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .burger-nav {
+    display: unset;
+    width: 100%;
+    text-align: center;
+    background-color: #FBFFDC;
+  }
+
+  .burger-nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .burger-nav ul li a {
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+  }
+
+  .visible {
+    display: unset;
+    opacity: 0.9;
+  }
+
+  
+}

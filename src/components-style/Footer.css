@@ -1,0 +1,33 @@
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  max-width: 100%;
+  margin-top: 10rem;
+}
+
+.mentions {
+  font-size: 1.2rem;
+}
+
+.copy {
+  font-size: 2rem;
+}
+
+.filler {
+  opacity: 0;
+}
+
+@media screen and (max-width: 780px) {
+  
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+
+
